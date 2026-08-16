@@ -12,7 +12,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import CreateNews from "./pages/CreateNews";
 import Contact from "./pages/Contact";
-import Profile from "./pages/Profile"; // ✅ ADD THIS
+import Profile from "./pages/Profile"; //
 
 function App() {
   return (
