@@ -10,15 +10,17 @@ import newsRoutes from "./routes/newsRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
-connectDB();
 
 const app = express();
 
-// ✅ IMPORTANT FOR COOKIES
-app.use(cors({
-  origin: "http://localhost:5173",
-  credentials: true
-}));
+connectDB();
+
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || "http://localhost:5173",
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 app.use(cookieParser());
@@ -29,6 +31,11 @@ app.use("/api/auth", authRoutes);
 app.use("/api/news", newsRoutes);
 app.use("/api/contact", contactRoutes);
 
-app.listen(process.env.PORT, () => {
-  console.log("Server running on port", process.env.PORT);
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "News Portal API is running",
+  });
 });
+
+export default app;
