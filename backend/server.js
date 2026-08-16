@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-
+import path from "path";
 import connectDB from "./config/db.js";
 
 import authRoutes from "./routes/authRoutes.js";
@@ -56,8 +56,10 @@ app.use(cookieParser());
 // =======================
 // STATIC FILES
 // =======================
-app.use("/uploads", express.static("uploads"));
-
+app.use(
+  "/uploads",
+  express.static(path.join(process.cwd(), "uploads"))
+);
 // =======================
 // ROUTES
 // =======================
