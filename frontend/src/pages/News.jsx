@@ -64,17 +64,17 @@ export default function News() {
           >
 
             {/* IMAGE */}
-            {item.image && (
-              <div className="overflow-hidden">
-                <motion.img
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.4 }}
-                  src={`http://localhost:5000${item.image}`}
-                  alt={item.title}
-                  className="w-full h-48 object-cover"
-                />
-              </div>
-            )}
+                          {item.image && (
+                <div className="overflow-hidden">
+                  <motion.img
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.4 }}
+                    src={`https://news-portal-mern-full-stack.onrender.com${item.image}`}
+                    alt={item.title}
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+              )}
 
             <div className="card-body">
 
