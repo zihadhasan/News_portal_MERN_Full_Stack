@@ -53,7 +53,7 @@ export default function SingleNews() {
   const imageUrl =
     news.image?.startsWith("http")
       ? news.image
-      : `http://localhost:5000${news.image}`;
+      : `https://news-portal-mern-full-stack.onrender.com${news.image}`;
 
   return (
     <div className="max-w-4xl mx-auto p-6">
