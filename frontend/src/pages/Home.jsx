@@ -37,7 +37,7 @@ export default function Home() {
   const getImage = (img) => {
     if (!img) return "https://via.placeholder.com/400x200";
     if (img.startsWith("http")) return img;
-    return `http://localhost:5000${img}`;
+   return `https://news-portal-mern-full-stack.onrender.com${img.startsWith("/") ? "" : "/"}${img}`;
   };
 
   // UPDATED CARD WITH ANIMATION
